@@ -22,6 +22,21 @@ strcmp(const char *p, const char *q)
   return (uchar)*p - (uchar)*q;
 }
 
+char *
+strcat(char *destination, const char *source)
+{
+  char * cp = destination;
+  while(*cp)
+    cp++;                           /* find end of dst */
+  while((*cp = *source)){
+    cp++;
+    source++;
+  }        /* Copy src to end of dst */
+
+  return(destination);              /* return dst */
+}
+
+
 uint
 strlen(const char *s)
 {
