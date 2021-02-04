@@ -275,6 +275,8 @@ fork(void)
   }
   np->sz = p->sz;
 
+  safestrcpy(np->mask, p->mask, sizeof(p->mask));
+
   np->parent = p;
 
   // copy saved user registers.
